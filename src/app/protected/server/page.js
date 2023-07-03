@@ -1,12 +1,12 @@
 import { getServerSession } from "next-auth/next";
-import { redirect } from "next/navigation";
 import { authOptions } from "../../api/auth/[...nextauth]/route";
+import ErrorPage from "@/app/ErrorPage/ErrorPage";
 
 const ServerProtectedPage = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect("/signin?callbackUrl=/protected/server");
+    return <ErrorPage />;
   }
 
   return (
@@ -16,7 +16,7 @@ const ServerProtectedPage = async () => {
         protected page
       </h1>
       <h2 className="mt-4 font-medium">You are logged in as:</h2>
-      <p className="mt-4 font-bold">{session?.user?.name}</p>
+      <p className="mt-4 text-2xl font-bold uppercase">{session?.user?.name}</p>
     </section>
   );
 };

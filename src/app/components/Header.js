@@ -3,17 +3,17 @@ import SignInButton from "./SignInButton";
 
 const Header = () => {
   return (
-    <header className="flex h-24 flex-col justify-center bg-stone-100">
+    <header className="flex h-24 flex-col justify-center bg-neutral-100">
       <nav>
-        <ul className="m-10 flex items-center justify-between gap-8 font-medium tracking-wider text-stone-500">
-          <li className="text-sm">
+        <ul className=" m-10 flex items-center justify-between gap-8 tracking-wider text-stone-900">
+          <li className="text-md">
             <Link href="/">Home</Link>
           </li>
-          <li className="text-sm">
-            <Link href="/protected/server">Protected (server)</Link>
+          <li className="text-md">
+            <Link href="/protected/server">Protected (server side)</Link>
           </li>
-          <li className="text-sm">
-            <Link href="/protected/client">Protected (client)</Link>
+          <li className="text-md">
+            <Link href="/protected/client">Protected (client side)</Link>
           </li>
           <li>
             <SignInButton />

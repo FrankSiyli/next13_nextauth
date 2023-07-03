@@ -9,7 +9,7 @@ const SignInPage = () => {
             Sign in to your account
           </h1>
         </div>
-
+        <br />
         <GoogleSignInButton />
       </div>
     </section>

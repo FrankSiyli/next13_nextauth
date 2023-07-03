@@ -1,15 +1,13 @@
-"use client";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../../api/auth/[...nextauth]/route";
+import ErrorPage from "@/app/ErrorPage/ErrorPage";
 
-import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+const ClientProtectPage = async () => {
+  const session = await getServerSession(authOptions);
 
-const ClientProtectPage = () => {
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      redirect("/signin?callbackUrl=/protected/client");
-    },
-  });
+  if (!session) {
+    return <ErrorPage />;
+  }
 
   return (
     <section className=" py-24 text-center">
@@ -18,7 +16,7 @@ const ClientProtectPage = () => {
         protected page
       </h1>
       <h2 className="mt-4 font-medium">You are logged in as:</h2>
-      <p className="mt-4 font-bold ">{session?.user?.name}</p>
+      <p className="mt-4 text-2xl font-bold uppercase">{session?.user?.name}</p>
     </section>
   );
 };

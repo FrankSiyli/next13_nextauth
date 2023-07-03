@@ -19,15 +19,8 @@ const SignInButton = () => {
       {session ? (
         <Menu as="div" className="relative">
           <Menu.Button>
-            {session?.user?.image ? (
-              <div className="relative h-10 w-10">
-                <Image
-                  src={session.user.image}
-                  alt={session.user.name}
-                  className="inline-block rounded-full"
-                  fill
-                />
-              </div>
+            {session ? (
+              <div className=" ">☰</div>
             ) : (
               <span className="inline-block h-8 w-8 overflow-hidden rounded-full bg-stone-100">
                 <svg
@@ -113,7 +106,7 @@ const SignInButton = () => {
           className="rounded-md border border-stone-300 px-3 py-1 text-sm dark:border-stone-600"
           onClick={() => signIn()}
         >
-          Sign In
+          Sign In with google
         </button>
       )}
     </>
