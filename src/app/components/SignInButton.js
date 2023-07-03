@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Menu, Transition } from "@headlessui/react";
 import clsx from "clsx";
+import hamburger from "../../../public/hamburger.png";
 
 import {
   ArrowRightOnRectangleIcon,
@@ -20,7 +21,7 @@ const SignInButton = () => {
         <Menu as="div" className="relative">
           <Menu.Button>
             {session ? (
-              <div className=" ">☰</div>
+              <Image src={hamburger} alt="" className=" h-5 w-5" />
             ) : (
               <span className="inline-block h-8 w-8 overflow-hidden rounded-full bg-stone-100">
                 <svg
