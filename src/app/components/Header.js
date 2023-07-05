@@ -7,13 +7,19 @@ const Header = () => {
       <nav>
         <ul className=" m-10 flex items-center justify-between gap-8 tracking-wider text-stone-900">
           <li className="text-md">
-            <Link href="/">Home</Link>
+            <Link href="/" className="underline">
+              Home
+            </Link>
           </li>
           <li className="text-md">
-            <Link href="/protected/server">Protected (server side)</Link>
+            <Link href="/protected/server" className="underline">
+              Protected (server side)
+            </Link>
           </li>
           <li className="text-md">
-            <Link href="/protected/client">Protected (client side)</Link>
+            <Link href="/protected/client" className="underline">
+              Protected (client side)
+            </Link>
           </li>
           <li>
             <SignInButton />

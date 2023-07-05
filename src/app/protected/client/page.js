@@ -10,8 +10,8 @@ const ClientProtectPage = async () => {
   }
 
   return (
-    <section className=" py-24 text-center">
-      <h1 className="text-2xl font-bold">
+    <section className=" py-24 text-center text-white">
+      <h1 className="text-2xl font-bold ">
         This is a <span className="text-emerald-500">client-side</span>{" "}
         protected page
       </h1>
